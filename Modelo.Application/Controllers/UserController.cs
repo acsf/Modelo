@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Autofac.Core;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Modelo.Domain.Entities;
+using Modelo.Service.Services;
+using Modelo.Service.Validators;
+using System;
 
 namespace Modelo.Application.Controllers
 {
@@ -16,11 +12,13 @@ namespace Modelo.Application.Controllers
     [ApiController]
     public class UserController : Controller
     {
+        private BaseService<User> service = new BaseService<User>();
+
         public IActionResult Post([FromBody] User item)
         {
             try
             {
-                Service.Post<UserValidator>(item);
+                service.Post<UsuarioValidator>(item);
 
                 return new ObjectResult(item.Id);
             }
@@ -39,7 +37,7 @@ namespace Modelo.Application.Controllers
         {
             try
             {
-                service.Put<UserValidator>(item);
+                service.Put<UsuarioValidator>(item);
 
                 return new ObjectResult(item);
             }

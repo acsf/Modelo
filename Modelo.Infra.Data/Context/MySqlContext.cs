@@ -23,7 +23,7 @@ namespace Modelo.Infra.Data.Context
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Usuario>(new UserMap().Configure);
+            modelBuilder.Entity<User>(new UserMap().Configure);
         }
     }
 }

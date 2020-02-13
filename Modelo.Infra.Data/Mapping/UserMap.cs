@@ -7,9 +7,9 @@ using System.Text;
 
 namespace Modelo.Infra.Data.Mapping
 {
-    public class UserMap:IEntityTypeConfiguration<User>
+    public class UserMap : IEntityTypeConfiguration<User>
     {
-        public void Configure(EntityTypeBuilder<Usuario> builder)
+        public void Configure(EntityTypeBuilder<User> builder)
         {
             builder.ToTable("User");
 

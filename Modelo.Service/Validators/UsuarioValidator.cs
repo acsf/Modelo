@@ -19,7 +19,7 @@ namespace Modelo.Service.Validators
 
             RuleFor(c => c.Cpf)
                 .NotEmpty().WithMessage("Is necessary to inform the CPF.")
-                .NotNull().WithMessage("Is necessary to inform the CPF".);
+                .NotNull().WithMessage("Is necessary to inform the CPF.");
 
             RuleFor(c => c.BirthDate)
                .NotEmpty().WithMessage("Is necessary to inform the BIRTH DATE.")

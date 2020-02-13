@@ -11,7 +11,7 @@ namespace Modelo.Domain.Interfaces
 
         void Update(T obj);
 
-        void Remove(int id);
+        void Delete(int id);
 
         T Select(int id);
 
